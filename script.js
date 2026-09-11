@@ -59,3 +59,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+// --- Control del Modal de Contacto ---
+const openModalBtn = document.getElementById('open-modal');
+const closeModalBtn = document.getElementById('close-modal');
+const modalOverlay = document.getElementById('modal-contacto');
+
+if (openModalBtn && closeModalBtn && modalOverlay) {
+    // Abrir la ventana flotante al hacer clic en "Escríbenos"
+    openModalBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modalOverlay.classList.add('active');
+    });
+
+    // Cerrar al hacer clic en el botón X
+    closeModalBtn.addEventListener('click', () => {
+        modalOverlay.classList.remove('active');
+    });
+
+    // Cerrar al hacer clic fuera de la ventana
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            modalOverlay.classList.remove('active');
+        }
+    });
+
+    // Cerrar al presionar la tecla Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+            modalOverlay.classList.remove('active');
+        }
+    });
+}
