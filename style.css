@@ -1,0 +1,419 @@
+/* --- Variables de Color & Tipografía --- */
+:root {
+    --primary-violet: #4F2C73;
+    --dark-violet: #2A1341;
+    --gold-accent: #D4AF37;
+    --gold-hover: #B89327;
+    --light-bg: #F8F5FA;
+    --white: #FFFFFF;
+    --text-dark: #222222;
+    --text-muted: #666666;
+    
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+/* --- Reseteo Básico --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--white);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+/* --- Navegación --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(42, 19, 65, 0.95);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding: 12px 5%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.logo a {
+    font-family: var(--font-heading);
+    color: var(--gold-accent);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold-accent);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background-color: var(--gold-accent);
+}
+
+/* --- Botones --- */
+.btn-primary {
+    background-color: var(--gold-accent);
+    color: var(--dark-violet);
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: var(--gold-hover);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 2px solid var(--gold-accent);
+    color: var(--white);
+    padding: 10px 26px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background-color: var(--gold-accent);
+    color: var(--dark-violet);
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(42, 19, 65, 0.8), rgba(79, 44, 115, 0.85)), 
+                url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    color: var(--white);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.subheading {
+    color: var(--gold-accent);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* --- Concepto Section --- */
+.concepto {
+    background-color: var(--light-bg);
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.concepto-text h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--primary-violet);
+    margin-bottom: 20px;
+}
+
+.concepto-text p {
+    margin-bottom: 15px;
+    color: var(--text-muted);
+}
+
+.concepto-card {
+    background: linear-gradient(135deg, var(--primary-violet), var(--dark-violet));
+    color: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--gold-accent);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.concepto-card h3 {
+    font-family: var(--font-heading);
+    color: var(--gold-accent);
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+/* --- Secciones Generales --- */
+.section-title {
+    font-family: var(--font-heading);
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--primary-violet);
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-size: 1rem;
+}
+
+/* --- Productos --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--white);
+    border: 1px solid #EAEAEA;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(79, 44, 115, 0.1);
+}
+
+.product-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary-violet);
+    color: var(--gold-accent);
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.placeholder-img-1, .placeholder-img-2, .placeholder-img-3 {
+    height: 200px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+.placeholder-img-1 { background-image: url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80'); }
+.placeholder-img-2 { background-image: url('https://images.unsplash.com/photo-1611591475155-4282fc289e14?auto=format&fit=crop&q=80'); }
+.placeholder-img-3 { background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80'); }
+
+.product-card h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-violet);
+    margin-bottom: 8px;
+}
+
+.product-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.price {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-violet);
+    margin-bottom: 15px;
+}
+
+.btn-card {
+    display: block;
+    text-decoration: none;
+    border: 1px solid var(--primary-violet);
+    color: var(--primary-violet);
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-card:hover {
+    background-color: var(--primary-violet);
+    color: var(--white);
+}
+
+/* --- Experiencia Unboxing --- */
+.experiencia {
+    background-color: var(--light-bg);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.exp-box {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.exp-box .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.exp-box h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-violet);
+    margin-bottom: 10px;
+}
+
+/* --- Valores --- */
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.valor-item {
+    background-color: var(--white);
+    border-left: 4px solid var(--gold-accent);
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-size: 0.95rem;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--dark-violet);
+    color: var(--white);
+    text-align: center;
+    padding: 40px 0 20px;
+    border-top: 2px solid var(--gold-accent);
+}
+
+.footer h3 {
+    font-family: var(--font-heading);
+    color: var(--gold-accent);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.social-links {
+    margin: 20px 0;
+}
+
+.social-links a {
+    color: var(--gold-accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.copy {
+    font-size: 0.8rem;
+    margin-top: 20px;
+    opacity: 0.5;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .nav-links {
+        display: none;
+    }
+    .btn-nav {
+        display: none;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+}
