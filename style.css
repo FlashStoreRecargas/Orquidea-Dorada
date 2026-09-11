@@ -418,113 +418,144 @@ body {
     }
 }
 
-/* --- Ventana Flotante (Modal de Contacto) --- */
+/* --- CORRECCIÓN DEL FORMULARIO Y MODAL --- */
+
+/* Ventana flotante centrada */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(15, 5, 25, 0.75);
     backdrop-filter: blur(6px);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
     z-index: 2000;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
 }
 
-/* Clase activa para mostrar la ventana */
 .modal-overlay.active {
     opacity: 1;
     pointer-events: auto;
 }
 
 .modal-container {
-    background-color: var(--white);
-    border: 2px solid var(--gold-accent);
+    background-color: var(--white, #ffffff);
+    border: 2px solid var(--gold-accent, #D4AF37);
     border-radius: 12px;
-    width: 90%;
-    max-width: 480px;
-    padding: 35px 30px;
+    width: 100%;
+    max-width: 420px;
+    padding: 25px 25px 20px;
     position: relative;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    transform: translateY(-20px);
+    transform: scale(0.9);
     transition: transform 0.3s ease;
 }
 
 .modal-overlay.active .modal-container {
-    transform: translateY(0);
+    transform: scale(1);
 }
 
+/* Botón de cerrar (X) limpio sin cuadro alrededor */
 .modal-close {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: var(--primary-violet);
+    top: 12px;
+    right: 16px;
+    background: transparent !important;
+    border: none !important;
+    outline: none;
+    font-size: 1.8rem;
+    color: var(--primary-violet, #4F2C73);
     cursor: pointer;
     line-height: 1;
-    transition: color 0.2s ease;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
 }
 
 .modal-close:hover {
-    color: var(--gold-accent);
+    color: var(--gold-accent, #D4AF37);
+}
+
+/* Encabezado */
+.modal-header {
+    text-align: center;
+    margin-bottom: 18px;
 }
 
 .modal-header h2 {
     font-family: var(--font-heading);
-    color: var(--primary-violet);
-    font-size: 1.8rem;
-    margin-bottom: 5px;
+    color: var(--primary-violet, #4F2C73);
+    font-size: 1.6rem;
+    margin-bottom: 4px;
 }
 
 .modal-header p {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-bottom: 20px;
+    font-size: 0.82rem;
+    color: var(--text-muted, #666);
+    margin: 0;
 }
 
-/* Campos del Formulario */
+/* Estructura vertical del formulario (Etiqueta ARRIBA de cada campo) */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
 .contact-form .form-group {
-    margin-bottom: 16px;
-    text-align: left;
+    display: flex;
+    flex-direction: column; /* Obliga a que la etiqueta quede arriba del input */
+    align-items: flex-start;
+    width: 100%;
 }
 
 .contact-form label {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 600;
-    color: var(--primary-violet);
-    margin-bottom: 6px;
+    color: var(--primary-violet, #4F2C73);
+    margin-bottom: 4px;
+    text-align: left;
+    width: 100%;
 }
 
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid #DDD;
+    width: 100% !important;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #CCC;
     border-radius: 6px;
     font-family: var(--font-body);
-    font-size: 0.9rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 0.88rem;
+    background-color: #FAFAFA;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: var(--gold-accent);
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+    background-color: #FFF;
+    border-color: var(--gold-accent, #D4AF37);
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25);
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 75px;
 }
 
 .btn-submit {
     width: 100%;
-    border: none;
+    padding: 11px;
+    font-size: 0.9rem;
+    margin-top: 5px;
     cursor: pointer;
-    margin-top: 10px;
-    font-size: 0.95rem;
+    border: none;
 }
