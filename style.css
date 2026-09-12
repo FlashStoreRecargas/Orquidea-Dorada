@@ -1207,3 +1207,37 @@ model-viewer {
         height: 280px;
     }
 }
+
+/* --- Selector de Categorías de AR --- */
+.ar-category-selector {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+}
+
+.ar-cat-btn {
+    padding: 9px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 20px;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ar-cat-btn:hover {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: var(--gold-accent);
+}
+
+.ar-cat-btn.active {
+    background-color: var(--gold-accent);
+    color: var(--primary-violet);
+    font-weight: 700;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.45);
+    border-color: var(--gold-accent);
+}

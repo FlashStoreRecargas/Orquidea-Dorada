@@ -238,5 +238,28 @@ if (openModalBtn && closeModalBtn && modalOverlay) {
         });
     });
 
+    // --- Lógica del Selector Dinámico de AR ---
+    const catButtons = document.querySelectorAll('.ar-cat-btn');
+    const modelViewer = document.getElementById('dynamic-model-viewer');
+    const dynamicHint = document.getElementById('ar-dynamic-hint');
+
+    catButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Cambiar estado activo visual de los botones
+            catButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Obtener los datos del botón presionado
+            const modelSrc = btn.getAttribute('data-model');
+            const instructionText = btn.getAttribute('data-instruction');
+
+            // Actualizar el modelo 3D en el visor de forma dinámica
+            modelViewer.src = modelSrc;
+
+            // Actualizar la instrucción que guía a la usuaria sobre dónde enfocar
+            dynamicHint.innerText = instructionText;
+        });
+    });
+
     // Inicializar enlace al cargar
     updateWhatsAppLink();

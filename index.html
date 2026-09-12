@@ -195,30 +195,42 @@
         </div>
     </section>
 
+    <!-- Sección de Realidad Aumentada Multimodelo (Atelier Inteligente) -->
     <section class="ar-section" id="realidad-aumentada">
         <div class="container reveal">
             <div class="ar-box">
-                <span class="ar-badge">Innovación Exclusiva</span>
+                <span class="ar-badge">Atelier Virtual Interactivo</span>
                 <h2 class="section-title">Pruébate la Joya en Vivo</h2>
-                <p class="section-subtitle">Experimenta el brillo y la elegancia de Orquídea Dorada directamente en tu piel antes de adquirirla.</p>
+                <p class="section-subtitle">Selecciona el tipo de pieza que deseas explorar y descubre cómo se adapta a ti.</p>
                 
+                <!-- Selector de Categorías de Joyas -->
+                <div class="ar-category-selector">
+                    <button class="ar-cat-btn active" data-model="https://modelviewer.dev/shared-assets/models/Astronaut.glb" data-instruction="✨ Coloca tu muñeca frente a la cámara para ajustar la pulsera.">Pulsera</button>
+                    <button class="ar-cat-btn" data-model="https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb" data-instruction="✨ Enfoca hacia tu cuello o pecho para visualizar el collar.">Collar</button>
+                    <button class="ar-cat-btn" data-model="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" data-instruction="✨ Acerca tu mano para probar el diseño en tus dedos.">Anillo</button>
+                </div>
+
+                <!-- Visor 3D y AR Dinámico -->
                 <div class="ar-viewer-container">
                     <model-viewer 
+                        id="dynamic-model-viewer"
                         src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
                         ar 
                         ar-modes="webxr scene-viewer quick-look" 
                         camera-controls 
                         auto-rotate 
                         shadow-intensity="1" 
-                        alt="Orquídea Dorada - Realidad Aumentada">
+                        alt="Orquídea Dorada - Colección Interactiva">
                         
+                        <!-- Botón flotante para activar la cámara -->
                         <button slot="ar-button" class="btn-primary ar-launch-btn">
-                            ✨ Abrir Cámara y Pruébatela
+                            ✨ Abrir Cámara en Vivo
                         </button>
                     </model-viewer>
                 </div>
                 
-                <p class="ar-hint">Funciona en la mayoría de teléfonos inteligentes modernos (iPhone y Android) sin instalar aplicaciones.</p>
+                <!-- Instrucción dinámica guiada -->
+                <p id="ar-dynamic-hint" class="ar-hint">✨ Coloca tu muñeca frente a la cámara para ajustar la pulsera.</p>
             </div>
         </div>
     </section>
