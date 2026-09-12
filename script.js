@@ -94,6 +94,39 @@ document.addEventListener('DOMContentLoaded', () => {
     // Llamar a la función una vez al inicio por si hay elementos ya visibles
     revealElements();
 
+    // --- Contador Regresivo ---
+    
+    // Configura aquí la fecha de lanzamiento (Mes Día, Año Hora:Minuto:Segundo)
+    const countdownDate = new Date("December 24, 2026 20:00:00").getTime();
+
+    const timerInterval = setInterval(function() {
+        // Obtener la fecha y hora actual
+        const now = new Date().getTime();
+        
+        // Encontrar la diferencia entre ahora y la fecha de lanzamiento
+        const distance = countdownDate - now;
+
+        // Si la cuenta regresiva termina, mostrar un mensaje
+        if (distance < 0) {
+            clearInterval(timerInterval);
+            document.getElementById("countdown-timer").innerHTML = "<h3 style='color: var(--primary-violet); font-family: var(--font-heading); margin-top: 20px;'>¡La nueva colección ya está disponible!</h3>";
+            return;
+        }
+
+        // Cálculos de tiempo para días, horas, minutos y segundos
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Actualizar el HTML (añadiendo un cero a la izquierda si el número es menor a 10)
+        document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+        document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+        document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        
+    }, 1000); // Se actualiza cada 1 segundo (1000 milisegundos)
+
 });
 
 // --- Control del Modal de Contacto ---
