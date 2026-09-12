@@ -160,3 +160,83 @@ if (openModalBtn && closeModalBtn && modalOverlay) {
         }
     });
 }
+
+// --- Lógica del Personalizador Interactivo Avanzado ---
+    const chainButtons = document.querySelectorAll('[data-target="chain"] .opt-btn');
+    const accentButtons = document.querySelectorAll('[data-target="accent"] .color-btn');
+    const charmButtons = document.querySelectorAll('[data-target="charm"] .opt-btn');
+
+    const previewChain = document.getElementById('preview-chain');
+    const previewAccent = document.getElementById('preview-accent');
+    const previewCharm = document.getElementById('preview-charm');
+    
+    const resumenPieza = document.getElementById('resumen-pieza');
+    const colorNameLabel = document.getElementById('color-name-label');
+    const whatsappCustomBtn = document.getElementById('whatsapp-custom-btn');
+
+    // Estado actual detallado
+    let selectedChain = "Eslabón Clásico";
+    let selectedAccent = "Violeta Orquídea";
+    let selectedCharm = "✨ Estrella";
+
+    function updateWhatsAppLink() {
+        // Mensaje de WhatsApp elegante y estructurado con emojis profesionales
+        const mensaje = `✨ *NUEVA SOLICITUD DE DISEÑO EXCLUSIVO* ✨\n\n` +
+                        `Hola, Orquídea Dorada. Me he enamorado de esta combinación personalizada en su web y deseo encargarla:\n\n` +
+                        `🔗 *Estilo de Cadena:* ${selectedChain}\n` +
+                        `🎨 *Tono de Detalle:* ${selectedAccent}\n` +
+                        `💎 *Símbolo Central:* ${selectedCharm}\n\n` +
+                        `Quedo atenta para coordinar detalles y pago. ¡Gracias!`;
+                        
+        const numeroWhatsApp = "584222342319"; // Reemplaza con tu número real
+        whatsappCustomBtn.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+    }
+
+    // Manejo de botones de Cadena
+    chainButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            chainButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const value = btn.getAttribute('data-value');
+            selectedChain = btn.getAttribute('data-text');
+            
+            previewChain.className = "jewel-chain " + value;
+            resumenPieza.innerText = `Pulsera ${selectedChain} + ${selectedAccent} + ${selectedCharm}`;
+            updateWhatsAppLink();
+        });
+    });
+
+    // Manejo de botones de Acrílico/Color
+    accentButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            accentButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const value = btn.getAttribute('data-value');
+            selectedAccent = btn.getAttribute('data-text');
+            
+            previewAccent.className = "jewel-accent " + value;
+            colorNameLabel.innerText = selectedAccent;
+            resumenPieza.innerText = `Pulsera ${selectedChain} + ${selectedAccent} + ${selectedCharm}`;
+            updateWhatsAppLink();
+        });
+    });
+
+    // Manejo de botones de Dije
+    charmButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            charmButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const value = btn.getAttribute('data-value');
+            selectedCharm = btn.getAttribute('data-text');
+            
+            previewCharm.className = "jewel-charm " + value;
+            resumenPieza.innerText = `Pulsera ${selectedChain} + ${selectedAccent} + ${selectedCharm}`;
+            updateWhatsAppLink();
+        });
+    });
+
+    // Inicializar enlace al cargar
+    updateWhatsAppLink();

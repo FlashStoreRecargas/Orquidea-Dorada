@@ -866,3 +866,249 @@ body {
         font-size: 0.65rem; 
     }
 }
+
+/* --- Personalizador Interactivo Avanzado (Atelier) --- */
+.customizer-section {
+    background-color: var(--light-bg);
+    padding: 80px 0;
+}
+
+.customizer-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    background-color: var(--white);
+    border: 2px solid rgba(212, 175, 55, 0.35);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 45px rgba(79, 44, 115, 0.08);
+    max-width: 1050px;
+    margin: 35px auto 0;
+    align-items: center;
+}
+
+/* Visualizador de Alta Gama */
+.customizer-preview {
+    text-align: center;
+    background: radial-gradient(circle, #fcfbfe 0%, #f1ebfc 100%);
+    border-radius: 16px;
+    padding: 35px 20px;
+    border: 1px solid rgba(79, 44, 115, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+.customizer-preview::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 120px;
+    height: 120px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.preview-box {
+    height: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 15px;
+}
+
+.jewel-display {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jewel-chain {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 6px solid var(--gold-accent);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    transition: all 0.35s ease;
+}
+
+/* Variaciones de la cadena avanzada */
+.jewel-chain.gold-clasica { border-style: solid; border-width: 6px; }
+.jewel-chain.gold-texturada { border-style: dotted; border-width: 8px; }
+.jewel-chain.gold-trenzada { border-style: double; border-width: 9px; }
+.jewel-chain.gold-malla { border-style: dashed; border-width: 5px; }
+
+.jewel-accent {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: all 0.35s ease;
+}
+
+/* Nueva paleta de tonos ampliada */
+.jewel-accent.color-violeta { background: linear-gradient(135deg, #4F2C73, #8a4bc4); }
+.jewel-accent.color-perla { background: linear-gradient(135deg, #f7f5fa, #ded8ed); border: 2px solid #D4AF37; }
+.jewel-accent.color-negro { background: linear-gradient(135deg, #121212, #2c2c2c); }
+.jewel-accent.color-rosas { background: linear-gradient(135deg, #e0a899, #f4c2b8); }
+.jewel-accent.color-esmeralda { background: linear-gradient(135deg, #113d30, #287a5e); }
+.jewel-accent.color-rubi { background: linear-gradient(135deg, #6e0d12, #b51a22); }
+
+.jewel-charm {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background-color: var(--gold-accent);
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    transform: translate(30px, -30px);
+    transition: all 0.35s ease;
+}
+.jewel-charm.charm-estrella::after { content: "✨"; }
+.jewel-charm.charm-corazon::after { content: "🤍"; }
+.jewel-charm.charm-letra::after { content: "🔠"; }
+.jewel-charm.charm-orquidea::after { content: "🌸"; }
+.jewel-charm.charm-luna::after { content: "🌙"; }
+
+.preview-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--gold-accent);
+    font-weight: 700;
+}
+
+#resumen-pieza {
+    font-family: var(--font-heading);
+    color: var(--primary-violet);
+    font-size: 1.1rem;
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+.preview-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark, #222);
+}
+
+/* Controles Interactivos */
+.customizer-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.control-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-violet);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Diseños de rejillas para opciones */
+.grid-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.grid-5 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+.opt-btn {
+    padding: 10px 12px;
+    background-color: #faf9fc;
+    border: 1px solid #e2def0;
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-align: center;
+}
+
+.opt-btn:hover {
+    border-color: var(--gold-accent);
+    color: var(--primary-violet);
+}
+
+.opt-btn.active {
+    background-color: var(--primary-violet);
+    color: var(--white);
+    border-color: var(--primary-violet);
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(79, 44, 115, 0.25);
+}
+
+/* Rejilla de Colores Avanzada */
+.color-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+
+.color-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.color-btn.color-violeta { background: linear-gradient(135deg, #4F2C73, #8a4bc4); }
+.color-btn.color-perla { background: linear-gradient(135deg, #f7f5fa, #ded8ed); border: 1px solid #ccc; }
+.color-btn.color-negro { background: linear-gradient(135deg, #121212, #2c2c2c); }
+.color-btn.color-rosas { background: linear-gradient(135deg, #e0a899, #f4c2b8); }
+.color-btn.color-esmeralda { background: linear-gradient(135deg, #113d30, #287a5e); }
+.color-btn.color-rubi { background: linear-gradient(135deg, #6e0d12, #b51a22); }
+
+.color-btn:hover {
+    transform: scale(1.12);
+}
+
+.color-btn.active {
+    border-color: var(--gold-accent);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.35);
+    transform: scale(1.08);
+}
+
+.color-name-hint {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.custom-order-btn {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    text-decoration: none;
+    display: block;
+    box-sizing: border-box;
+    padding: 13px;
+    font-size: 0.95rem;
+}
+
+/* Responsividad */
+@media (max-width: 850px) {
+    .customizer-container {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+    .grid-4, .grid-5 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
