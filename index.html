@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
     <!-- Preloader Elegante -->
@@ -190,6 +191,34 @@
                     <span class="price">$1.50</span>
                     <a href="https://instagram.com" target="_blank" class="btn-card">Consultar por Instagram</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ar-section" id="realidad-aumentada">
+        <div class="container reveal">
+            <div class="ar-box">
+                <span class="ar-badge">Innovación Exclusiva</span>
+                <h2 class="section-title">Pruébate la Joya en Vivo</h2>
+                <p class="section-subtitle">Experimenta el brillo y la elegancia de Orquídea Dorada directamente en tu piel antes de adquirirla.</p>
+                
+                <div class="ar-viewer-container">
+                    <model-viewer 
+                        src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+                        ar 
+                        ar-modes="webxr scene-viewer quick-look" 
+                        camera-controls 
+                        auto-rotate 
+                        shadow-intensity="1" 
+                        alt="Orquídea Dorada - Realidad Aumentada">
+                        
+                        <button slot="ar-button" class="btn-primary ar-launch-btn">
+                            ✨ Abrir Cámara y Pruébatela
+                        </button>
+                    </model-viewer>
+                </div>
+                
+                <p class="ar-hint">Funciona en la mayoría de teléfonos inteligentes modernos (iPhone y Android) sin instalar aplicaciones.</p>
             </div>
         </div>
     </section>

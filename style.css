@@ -1112,3 +1112,98 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* --- Sección de Realidad Aumentada (WebAR) --- */
+.ar-section {
+    background: linear-gradient(135deg, #120A1F 0%, #231238 100%);
+    padding: 80px 0;
+    color: var(--white);
+    text-align: center;
+}
+
+.ar-box {
+    max-width: 750px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+}
+
+.ar-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gold-accent);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.ar-box .section-title {
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.ar-box .section-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+}
+
+/* Contenedor del Visor 3D */
+.ar-viewer-container {
+    width: 100%;
+    height: 350px;
+    background: radial-gradient(circle, rgba(79,44,115,0.4) 0%, rgba(18,10,31,0.8) 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* El elemento model-viewer ocupa todo el contenedor */
+model-viewer {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+/* Botón flotante de Realidad Aumentada dentro del visor */
+.ar-launch-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--gold-accent) !important;
+    color: var(--primary-violet) !important;
+    border: none;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.ar-launch-btn:hover {
+    background-color: #fff !important;
+}
+
+.ar-hint {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    margin-top: 15px;
+}
+
+/* Responsividad para celulares */
+@media (max-width: 600px) {
+    .ar-box {
+        padding: 20px;
+    }
+    .ar-viewer-container {
+        height: 280px;
+    }
+}
