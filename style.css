@@ -560,3 +560,236 @@ body {
     cursor: pointer;
     border: none;
 }
+
+/* --- Preloader Elegante --- */
+/* --- Preloader Elegante --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary-violet);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.loader-content {
+    text-align: center;
+    color: var(--gold-accent); /* Esto asegura que la orquídea SVG herede el color dorado */
+}
+
+.loader-logo {
+    font-family: var(--font-heading);
+    letter-spacing: 3px;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    animation: pulse 1.5s infinite alternate;
+}
+
+/* Nuevo contenedor para la Orquídea giratoria */
+.orchid-spinner {
+    width: 55px; /* Tamaño de la flor */
+    height: 55px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Animación de rotación suave y continua */
+    animation: spinOrchid 3.5s linear infinite;
+}
+
+/* Estilo para asegurar que el SVG ocupe todo el espacio */
+.orchid-spinner svg,
+.orchid-spinner img {
+    width: 100%;
+    height: 100%;
+    /* Efecto de resplandor dorado sutil */
+    filter: drop-shadow(0px 0px 8px rgba(212, 175, 55, 0.4));
+}
+
+/* Animación de giro más lenta y elegante que el spinner estándar */
+@keyframes spinOrchid { 
+    0% { transform: rotate(0deg) scale(0.9); }
+    50% { transform: rotate(180deg) scale(1.1); } /* Pequeño latido a la mitad del giro */
+    100% { transform: rotate(360deg) scale(0.9); } 
+}
+
+@keyframes pulse { 
+    0% { opacity: 0.6; } 
+    100% { opacity: 1; } 
+}
+
+/* Clase para ocultar el preloader */
+.preloader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* --- Botón Flotante de WhatsApp --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366; /* Color de marca de WhatsApp */
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    color: white;
+}
+
+/* --- Efecto de Revelación (Fade In al hacer Scroll) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- El Arte del Proceso --- */
+.proceso {
+    background-color: var(--white);
+}
+
+.placeholder-proceso {
+    height: 400px;
+    background-image: url('https://images.unsplash.com/photo-1617502120050-8b1e4a3e7421?auto=format&fit=crop&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.proceso-text p {
+    margin-bottom: 15px;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+/* --- Testimonios Visuales --- */
+.testimonios {
+    background-color: var(--light-bg);
+}
+
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonio-card {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    position: relative;
+    /* Efecto estilo foto Polaroid */
+    border-bottom: 30px solid var(--white);
+}
+
+.testimonio-img {
+    height: 250px;
+    background-color: #EEE;
+    margin-bottom: 20px;
+    border-radius: 2px;
+    background-size: cover;
+    background-position: center;
+}
+
+.placeholder-t1 { background-image: url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80'); }
+.placeholder-t2 { background-image: url('https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?auto=format&fit=crop&q=80'); }
+
+.cita {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    padding: 0 10px;
+}
+
+.testimonio-card h4 {
+    font-family: var(--font-heading);
+    color: var(--primary-violet);
+    font-size: 1.1rem;
+}
+
+/* --- Catálogo Descargable (CTA) --- */
+.catalogo-cta {
+    background-color: var(--white);
+    padding-top: 20px;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, var(--primary-violet), var(--dark-violet));
+    border: 1px solid var(--gold-accent);
+    border-radius: 15px;
+    padding: 50px 30px;
+    text-align: center;
+    color: var(--white);
+    box-shadow: 0 15px 30px rgba(79, 44, 115, 0.2);
+}
+
+.cta-box h2 {
+    font-family: var(--font-heading);
+    color: var(--gold-accent);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.cta-box p {
+    margin-bottom: 25px;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.cta-form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.cta-form input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    font-family: var(--font-body);
+    outline: none;
+}
+
+.cta-form .btn-primary {
+    border: none;
+    cursor: pointer;
+}
+
+/* Hacer el formulario del catálogo responsive */
+@media (max-width: 600px) {
+    .cta-form {
+        flex-direction: column;
+    }
+}

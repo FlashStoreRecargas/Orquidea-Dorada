@@ -5,12 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orquídea Dorada | Joyería Artesanal Exclusiva</title>
     <!-- Fuentes Elegantes de Google Fonts -->
+     <link rel="shortcut icon" href="orquidea.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Preloader Elegante -->
+<div id="preloader">
+    <div class="loader-content">
+        <h2 class="loader-logo">ORQUÍDEA DORADA</h2>
+        
+        <div class="orchid-spinner">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 10 C35 30, 40 45, 50 50 C60 45, 65 30, 50 10 Z" fill="currentColor" opacity="0.9"/>
+                <path d="M15 40 C30 30, 45 40, 50 50 C40 60, 20 60, 15 40 Z" fill="currentColor" opacity="0.8"/>
+                <path d="M85 40 C70 30, 55 40, 50 50 C60 60, 80 60, 85 40 Z" fill="currentColor" opacity="0.8"/>
+                <path d="M30 85 C40 70, 45 60, 50 50 C40 60, 25 70, 30 85 Z" fill="currentColor" opacity="0.7"/>
+                <path d="M70 85 C60 70, 55 60, 50 50 C60 60, 75 70, 70 85 Z" fill="currentColor" opacity="0.7"/>
+                <circle cx="50" cy="50" r="6" fill="#FFF"/>
+            </svg>
+        </div>
+    </div>
+</div>
 
     <!-- Navegación Principal -->
     <header class="navbar" id="navbar">
@@ -97,12 +115,12 @@
     <!-- Concepto de Marca -->
     <section class="concepto" id="concepto">
         <div class="container grid-2">
-            <div class="concepto-text">
+            <div class="concepto-text reveal">
                 <h2>Diseño Curado & Autenticidad</h2>
                 <p>En un mercado inundado de bisutería de producción masiva, <strong>Orquídea Dorada</strong> nace para ofrecer una alternativa exclusiva. Diseñamos pulseras, dijes y collares con una atención minuciosa al detalle y acabados en baño dorado.</p>
                 <p>Cada pieza cuenta una historia y transforma la forma en que llevas tus accesorios.</p>
             </div>
-            <div class="concepto-card">
+            <div class="concepto-card reveal">
                 <div class="card-inner">
                     <h3>Ediciones Limitadas</h3>
                     <p>Producción en pequeños lotes que garantizan la exclusividad de tu accesorio.</p>
@@ -118,7 +136,7 @@
             <p class="section-subtitle">Descubre una selección de nuestras creaciones más solicitadas</p>
 
             <div class="product-grid">
-                <div class="product-card">
+                <div class="product-card reveal">
                     <div class="product-badge">Exclusivo</div>
                     <div class="product-image placeholder-img-1"></div>
                     <h3>Collares de Autor</h3>
@@ -127,7 +145,7 @@
                     <a href="https://instagram.com" target="_blank" class="btn-card">Consultar por Instagram</a>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card reveal">
                     <div class="product-badge">Top Seller</div>
                     <div class="product-image placeholder-img-2"></div>
                     <h3>Pulseras Personalizadas</h3>
@@ -136,7 +154,7 @@
                     <a href="https://instagram.com" target="_blank" class="btn-card">Consultar por Instagram</a>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card reveal">
                     <div class="product-badge">Edición Limitada</div>
                     <div class="product-image placeholder-img-3"></div>
                     <h3>Dijes de Distinción</h3>
@@ -155,21 +173,66 @@
             <p class="section-subtitle">Más que un accesorio, un momento memorable</p>
 
             <div class="grid-3">
-                <div class="exp-box">
+                <div class="exp-box reveal">
                     <div class="icon">📦</div>
                     <h3>Empaque de Lujo</h3>
                     <p>Cajas rígidas diseñadas en nuestro emblemático violeta profundo con acabados metálicos.</p>
                 </div>
-                <div class="exp-box">
+                <div class="exp-box reveal">
                     <div class="icon">✨</div>
                     <h3>Protección en Satén</h3>
                     <p>Sacos suaves de satén para conservar el brillo y pulcro estado de tus joyas.</p>
                 </div>
-                <div class="exp-box">
+                <div class="exp-box reveal">
                     <div class="icon">📱</div>
                     <h3>Conexión QR</h3>
                     <p>Tarjetas texturizadas con acceso directo a guías exclusivas de cuidado y asesoría.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class="proceso" id="proceso">
+        <div class="container grid-2">
+            <div class="proceso-img reveal placeholder-proceso"></div>
+            <div class="proceso-text reveal">
+                <h2 class="section-title" style="text-align: left;">El Arte del Proceso</h2>
+                <p>No ensamblamos, <strong>creamos</strong>. Cada pieza de Orquídea Dorada es el resultado de un cuidado artesanal minucioso.</p>
+                <p>Seleccionamos a mano los eslabones, acrílicos y elementos con baño dorado, invirtiendo el tiempo necesario para asegurar que tu historia sea contada con perfección y exclusividad. Atrás queda la producción masiva; aquí celebramos lo auténtico.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonios" id="testimonios">
+        <div class="container">
+            <h2 class="section-title reveal">Voces de Exclusividad</h2>
+            <p class="section-subtitle reveal">Mujeres que ya destacan con nuestras piezas</p>
+            
+            <div class="testimonios-grid reveal">
+                <div class="testimonio-card">
+                    <div class="testimonio-img placeholder-t1"></div>
+                    <p class="cita">"El nivel de detalle en el empaque y la pulsera es increíble. Realmente te hace sentir especial desde que abres la caja."</p>
+                    <h4>— Camila V.</h4>
+                </div>
+                <div class="testimonio-card">
+                    <div class="testimonio-img placeholder-t2"></div>
+                    <p class="cita">"Una pieza que eleva cualquier outfit. El baño dorado se mantiene impecable y el diseño no se parece al de nadie más."</p>
+                    <h4>— Andrea M.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalogo-cta" id="catalogo">
+        <div class="container reveal">
+            <div class="cta-box">
+                <h2>Descubre la Colección Completa</h2>
+                <p>Déjanos tu correo y recibe acceso inmediato a nuestro catálogo digital exclusivo en formato PDF.</p>
+                <form action="https://formsubmit.co/tu-correo@gmail.com" method="POST" class="cta-form">
+                    <input type="hidden" name="_subject" value="¡Alguien solicitó el catálogo de Orquídea Dorada!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://tudominio.com/catalogo.pdf"> <input type="email" name="Correo" placeholder="tu@correo.com" required>
+                    <button type="submit" class="btn-primary">Descargar Catálogo</button>
+                </form>
             </div>
         </div>
     </section>
@@ -202,5 +265,12 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- Botón Flotante de WhatsApp -->
+<a href="https://wa.me/584222342319?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20sus%20piezas%20exclusivas." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <!-- Icono SVG de WhatsApp -->
+    <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor">
+        <path d="M16 2a13 13 0 0 0-10.73 20.36L3.5 28.5l6.32-1.65A12.96 12.96 0 0 0 16 28c7.18 0 13-5.82 13-13S23.18 2 16 2zm0 24c-2.3 0-4.46-.6-6.3-1.66l-.45-.26-4.14 1.08 1.1-4-.3-.46A10.96 10.96 0 0 1 5 15c0-6.07 4.93-11 11-11s11 4.93 11 11-4.93 11-11 11zm5.35-7.7c-.3-.15-1.74-.86-2-1-.26-.14-.45-.2-.64.1-.18.28-.75.96-.92 1.15-.17.2-.34.23-.64.08-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.65-1.57-.88-2.15-.23-.57-.46-.48-.64-.48h-.54c-.2 0-.52.08-.8.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.48.7.3 1.26.48 1.68.62.72.23 1.38.2 1.9.12.57-.08 1.74-.7 1.98-1.38.24-.68.24-1.25.17-1.38-.08-.13-.27-.2-.57-.35z"/>
+    </svg>
+</a>
 </body>
 </html>

@@ -58,6 +58,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Agrega esto al final de tu archivo script.js, DENTRO del document.addEventListener('DOMContentLoaded', ...)
+
+    // --- Ocultar Preloader al cargar ---
+    // Usamos window.onload para asegurar que todo el contenido (imágenes, etc.) esté listo
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            // Le damos un pequeño retraso de medio segundo por estética
+            setTimeout(() => {
+                preloader.classList.add('preloader-hidden');
+            }, 2000);
+        }
+    });
+
+    // --- Efecto de Revelación al hacer Scroll ---
+    function revealElements() {
+        const reveals = document.querySelectorAll('.reveal');
+        const windowHeight = window.innerHeight;
+        // La distancia desde abajo donde queremos que se active la animación
+        const elementVisible = 100; 
+
+        reveals.forEach((reveal) => {
+            const elementTop = reveal.getBoundingClientRect().top;
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveal.classList.add('active');
+            }
+        });
+    }
+
+    // Escuchar el evento de scroll
+    window.addEventListener('scroll', revealElements);
+    
+    // Llamar a la función una vez al inicio por si hay elementos ya visibles
+    revealElements();
+
 });
 
 // --- Control del Modal de Contacto ---
