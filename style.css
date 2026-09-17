@@ -277,9 +277,9 @@ body {
     background-position: center;
 }
 
-.placeholder-img-1 { background-image: url('../Juan/3.jpeg'); }
-.placeholder-img-2 { background-image: url('../Juan/2.jpeg'); }
-.placeholder-img-3 { background-image: url('../Juan/1.jpeg'); }
+.placeholder-img-1 { background-image: url('3.jpeg'); }
+.placeholder-img-2 { background-image: url('2.jpeg'); }
+.placeholder-img-3 { background-image: url('1.jpeg'); }
 
 .product-card h3 {
     font-family: var(--font-heading);
